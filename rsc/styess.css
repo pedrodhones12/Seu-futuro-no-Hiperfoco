@@ -1,0 +1,79 @@
+body{
+font-family:Arial,sans-serif;
+background:#F8F9FB;
+margin:0;
+color:#0F1729;
+}
+
+.hero{
+background:linear-gradient(135deg,#2463EB,#6347EB);
+color:white;
+text-align:center;
+padding:80px 20px;
+}
+
+.hero h1{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:800px;
+margin:auto;
+font-size:20px;
+line-height:1.8;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:60px 20px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card h2{
+color:#2463EB;
+}
+
+.especialista{
+background:white;
+margin-top:60px;
+padding:40px;
+border-radius:20px;
+display:flex;
+gap:30px;
+align-items:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.foto{
+width:180px;
+height:180px;
+border-radius:50%;
+background:#2463EB;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:70px;
+color:white;
+}
+
+footer{
+background:#0F1729;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:60px;
+}
