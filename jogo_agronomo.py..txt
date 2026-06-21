@@ -1,0 +1,215 @@
+
+
+import time
+
+# ---------------------------
+# Funções auxiliares
+# ---------------------------
+def mensagem_inicial():
+    print("="*70)
+    print("🌟 BEM-VINDO AO JOGO: ENGENHEIRO AGRÔNOMO 🌟")
+    print("="*70)
+    time.sleep(1)
+    print("\nVocê tem um cérebro muito especial!")
+    print("✅ De TEA: você nota detalhes, ama padrões, se aprofunda no que gosta.")
+    print("✅ De TDAH: você tem energia, curiosidade, pensa rápido e cria ideias novas.")
+    print("\n📚 Conforme explica o livro Neurodivergentes:")
+    print("Suas características não são defeitos — são talentos únicos!")
+    time.sleep(3)
+    print("\nHoje você vai ser um Engenheiro Agrônomo, vai explorar áreas incríveis e descobrir onde seu foco brilha mais.")
+    input("\n📌 Pressione ENTER para começar (vá no seu ritmo!)")
+
+def apresentar_area(nome, descricao, talentos_tea, talentos_tdah, atividades):
+    print("\n" + "-"*60)
+    print(f"🌱 ÁREA: {nome.upper()}")
+    print("-"*60)
+    print(f"📝 O que é: {descricao}")
+    print("\n✨ Seus talentos que usará aqui:")
+    print(f"🔹 TEA: {talentos_tea}")
+    print(f"🔹 TDAH: {talentos_tdah}")
+    print("\n🎯 Atividades que você vai fazer:")
+    for atv in atividades:
+        print(f"   ➤ {atv}")
+    time.sleep(2)
+    print("\n💡 Você achou essa área interessante?")
+    while True:
+        resp = input("Digite S para SIM ou N para NÃO: ").strip().upper()
+        if resp in ["S", "N"]:
+            return resp
+        print("Resposta inválida! Digite apenas S ou N.")
+
+def etapa_aprofundamento(areas_interessantes):
+    print("\n" + "="*70)
+    print("🔍 ETAPA 3: APROFUNDAMENTO — ONDE O TALENTO CRESCE")
+    print("="*70)
+    time.sleep(1)
+    print("Você gostou dessas áreas? Agora vamos explorar cada uma com muito mais detalhes!")
+    print("Lembre-se: seu hiperfoco é a capacidade de ir muito mais fundo do que qualquer um imagina — é o seu dom!\n")
+    preferidas = []
+    for area in areas_interessantes:
+        print(f"➡️ Vamos aprofundar em: {area['nome']}")
+        print(f"   {area['descricao']}")
+        resp = input("Você quer ficar mais tempo aqui? (S/N): ").strip().upper()
+        if resp == "S":
+            preferidas.append(area)
+    return preferidas
+
+def etapa_escolha_final(preferidas):
+    print("\n" + "="*70)
+    print("🤔 ETAPA 4: O CAMINHO DAS PREFERÊNCIAS")
+    print("="*70)
+    time.sleep(1)
+    print("Agora vamos descobrir qual área é a que mais faz sua mente brilhar!")
+    if len(preferidas) == 1:
+        return preferidas[0]
+    print("\nEscolha a área que você mais amou explorar:")
+    for i, area in enumerate(preferidas, 1):
+        print(f"{i}. {area['nome']}")
+    while True:
+        try:
+            escolha = int(input("Digite o número da sua escolha: "))
+            if 1 <= escolha <= len(preferidas):
+                return preferidas[escolha - 1]
+            else:
+                print(f"Digite um número entre 1 e {len(preferidas)}")
+        except ValueError:
+            print("Digite apenas números!")
+
+def revelacao_hiperfoco(area):
+    print("\n" + "="*70)
+    print("🎉 ETAPA 5: A DESCOBERTA DO SEU HIPERFOCO 🎉")
+    print("="*70)
+    time.sleep(2)
+    print(f"\n🎯 SEU HIPERFOCO É: {area['nome'].upper()}")
+    time.sleep(1)
+    print(f"\n{area['mensagem_revelacao']}")
+    time.sleep(3)
+    print("\n📚 Conforme o livro Neurodivergentes:")
+    print("Essa combinação de foco profundo + energia e criatividade é rara e poderosa!")
+    print("Grandes cientistas, inventores e profissionais tinham exatamente essa mistura.")
+    time.sleep(2)
+
+def mensagem_empreendedorismo():
+    print("\n" + "="*70)
+    print("💡 E SEU TALENTO PODE VIRAR UM NEGÓCIO? 💡")
+    print("="*70)
+    time.sleep(2)
+    print("\nQue tal CRIAR UM PROJETO EMPREENDEDOR baseado no que você acabou de descobrir?")
+    print("\n✅ Use o seu hiperfoco para dominar tudo sobre essa área.")
+    print("✅ Use sua energia de TDAH para criar, inovar e fazer acontecer.")
+    print("✅ Use sua visão de mundo diferente para enxergar soluções que ninguém mais vê.")
+    print("\n🚀 O mundo precisa de pessoas que pensam diferente, que vão fundo e que transformam ideias em realidade.")
+    print("Seu talento não é só uma habilidade — é uma oportunidade de mudar a sua vida e a vida de muita gente!")
+    print("\n📌 Lembre-se: Neurodiversidade é força, é talento, é futuro.")
+    print("Você é capaz de coisas incríveis!")
+    time.sleep(4)
+
+# ---------------------------
+# Dados das áreas do jogo
+# ---------------------------
+areas = [
+    {
+        "nome": "Ciência do Solo",
+        "descricao": "Estudar tipos de terra, nutrientes, umidade, textura, acidez e como preparar o solo perfeito para cada planta.",
+        "talentos_tea": "Classifica, organiza, vê detalhes, compara tipos, segue padrões com precisão.",
+        "talentos_tdah": "Experimenta, mistura, testa, descobre relações, tem energia para explorar tudo.",
+        "atividades": [
+            "Classificar terras por cor e textura",
+            "Descobrir qual solo combina com qual planta",
+            "Ver microscópio: partículas e seres vivos da terra"
+        ],
+        "mensagem_revelacao": "Você tem uma capacidade incrível de perceber detalhes que outros não veem: cor, textura, nutrientes, como cada parte funciona e se conecta. Você conhece a terra como ninguém! Como Engenheiro Agrônomo, vai criar terras mais férteis, ajudar a produzir alimentos e proteger o meio ambiente."
+    },
+    {
+        "nome": "Produção Vegetal",
+        "descricao": "Conhecer plantas, seu ciclo de vida, necessidades de água, sol, espaço, como plantar, cuidar e colher.",
+        "talentos_tea": "Segue sequências, memoriza nomes e formatos, ama ordem e detalhes.",
+        "talentos_tdah": "Gosta de ver crescimento rápido, experimenta muitas espécies, tem curiosidade infinita.",
+        "atividades": [
+            "Ver semente virar planta em segundos",
+            "Caça ao detalhe: achar folha diferente, flor aberta",
+            "Montar a ordem do crescimento"
+        ],
+        "mensagem_revelacao": "Você ama entender cada etapa da vida das plantas, sabe tudo sobre cada espécie e percebe coisas que ninguém nota. Seu hiperfoco em botânica e produção vai fazer você desenvolver novas culturas, melhorar sementes e alimentar o mundo com qualidade!"
+    },
+    {
+        "nome": "Clima, Água e Meio Ambiente",
+        "descricao": "Entender chuva, sol, vento, estações, sistemas de irrigação e como proteger a natureza.",
+        "talentos_tea": "Ama regras, calendários, organização, previsibilidade e padrões.",
+        "talentos_tdah": "Adora mudanças, movimento, energia, prever o que vai acontecer, criar estratégias.",
+        "atividades": [
+            "Calendário interativo: o que plantar em cada estação",
+            "Desenhar caminhos para a água chegar nas plantas",
+            "Simular chuva, sol e vento na fazenda"
+        ],
+        "mensagem_revelacao": "Você domina padrões climáticos, sabe planejar com precisão e cria sistemas inteligentes para usar água e energia. É o especialista em sustentabilidade e gestão de recursos — essencial para uma agricultura moderna e responsável!"
+    },
+    {
+        "nome": "Tecnologia e Máquinas Agrícolas",
+        "descricao": "Usar tratores, colheitadeiras, irrigação automática, sensores e tecnologia para otimizar a produção.",
+        "talentos_tea": "Quer saber cada peça, cada regra, lógica perfeita, entende o funcionamento profundo.",
+        "talentos_tdah": "Ama movimento, velocidade, construir, desmontar, inventar soluções novas.",
+        "atividades": [
+            "Montar e desmontar máquinas: ver cada peça encaixar",
+            "Dirigir equipamentos e ligar sistemas automáticos",
+            "Inventar melhorias: mais rápido, melhor, mais econômico"
+        ],
+        "mensagem_revelacao": "Você entende como tudo funciona, domina a lógica das máquinas e cria inovações que ninguém pensou. Seu talento vai transformar a agricultura com tecnologia, automação e eficiência — você é o engenheiro do futuro!"
+    },
+    {
+        "nome": "Saúde das Plantas",
+        "descricao": "Identificar doenças, pragas, problemas, diagnosticar e cuidar para manter tudo saudável.",
+        "talentos_tea": "Vê diferenças pequenas, detalhes, gosta de soluções exatas e precisas.",
+        "talentos_tdah": "Adora ser detetive, agir rápido, resolver mistérios, encontrar causas e soluções.",
+        "atividades": [
+            "Detetive da planta: achar o que está errado",
+            "Escolher o remédio ou cuidado certo",
+            "Criar rotinas de prevenção"
+        ],
+        "mensagem_revelacao": "Você percebe sinais que outros ignoram, diagnostica com precisão e sabe exatamente como cuidar. É o especialista em sanidade vegetal, protegendo lavouras e garantindo colheitas fortes e saudáveis para todos!"
+    }
+]
+
+# ---------------------------
+# Fluxo principal do jogo
+# ---------------------------
+if __name__ == "__main__":
+    mensagem_inicial()
+
+    # Etapa 2: Explorar todas as áreas
+    print("\n" + "="*70)
+    print("🌾 ETAPA 2: EXPLORANDO AS ÁREAS DA AGRONOMIA")
+    print("="*70)
+    time.sleep(1)
+    areas_interessantes = []
+    for area in areas:
+        resp = apresentar_area(
+            area["nome"],
+            area["descricao"],
+            area["talentos_tea"],
+            area["talentos_tdah"],
+            area["atividades"]
+        )
+        if resp == "S":
+            areas_interessantes.append(area)
+
+    if not areas_interessantes:
+        print("\nVocê não gostou de nenhuma? Tudo bem! Todos os talentos são valiosos.")
+        exit()
+
+    # Etapa 3: Aprofundamento
+    preferidas = etapa_aprofundamento(areas_interessantes)
+
+    if not preferidas:
+        preferidas = areas_interessantes
+
+    # Etapa 4: Escolha final
+    area_hiperfoco = etapa_escolha_final(preferidas)
+
+    # Etapa 5: Revelação e mensagem final
+    revelacao_hiperfoco(area_hiperfoco)
+    mensagem_empreendedorismo()
+
+    print("\n" + "="*70)
+    print("🏁 FIM DO JOGO — OBRIGADO POR JOGAR!")
+    print("="*70)
