@@ -1,79 +1,122 @@
-body{
-font-family:Arial,sans-serif;
-background:#F8F9FB;
-margin:0;
-color:#0F1729;
+/* ========== ESTILO DA BARRA DE MENU - IGUAL AO SITE ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-.hero{
-background:linear-gradient(135deg,#2463EB,#6347EB);
-color:white;
-text-align:center;
-padding:80px 20px;
+body {
+    display: flex;
+    background-color: #f5f7fa;
 }
 
-.hero h1{
-font-size:50px;
-margin-bottom:20px;
+/* Menu Lateral */
+.menu-lateral {
+    width: 260px;
+    height: 100vh;
+    background-color: #1a1d29; /* Cor escura igual ao site */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
 }
 
-.hero p{
-max-width:800px;
-margin:auto;
-font-size:20px;
-line-height:1.8;
+/* Área da Logo */
+.logo-area {
+    padding: 25px 20px;
+    border-bottom: 1px solid #2e3242;
+    text-align: center;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:60px 20px;
+.logo-area h2 {
+    font-size: 20px;
+    font-weight: bold;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+.hiperfoco {
+    color: #ffffff;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+.vale {
+    color: #2463EB; /* Azul principal do site */
 }
 
-.card h2{
-color:#2463EB;
+/* Itens do Menu */
+.menu-itens {
+    flex: 1;
+    padding: 20px 0;
+    overflow-y: auto;
 }
 
-.especialista{
-background:white;
-margin-top:60px;
-padding:40px;
-border-radius:20px;
-display:flex;
-gap:30px;
-align-items:center;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+.menu-itens ul {
+    list-style: none;
 }
 
-.foto{
-width:180px;
-height:180px;
-border-radius:50%;
-background:#2463EB;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:70px;
-color:white;
+.item-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #b0b3c1;
+    text-decoration: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    transition: all 0.3s ease;
 }
 
-footer{
-background:#0F1729;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:60px;
+.item-menu a:hover {
+    background-color: #2463EB;
+    color: #ffffff;
+    border-left: 4px solid #ffffff;
 }
+
+/* Item ativo (página atual) */
+.item-menu.ativo a {
+    background-color: #2463EB;
+    color: #ffffff;
+    border-left: 4px solid #ffffff;
+}
+
+.item-menu i {
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Linha separadora */
+.separador {
+    height: 1px;
+    background-color: #2e3242;
+    margin: 15px 20px;
+}
+
+/* Botão Sair */
+.item-menu.sair a {
+    color: #ff6b6b;
+}
+
+.item-menu.sair a:hover {
+    background-color: #dc2626;
+    color: white;
+}
+
+/* Rodapé do Menu */
+.rodape-menu {
+    padding: 15px 20px;
+    border-top: 1px solid #2e3242;
+    font-size: 12px;
+    color: #717485;
+    text-align: center;
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    margin-left: 260px;
+    padding: 30px;
+    width: 100%;
+}
+
+/* ========== FIM DO ESTILO DA BARRA ========== */
